@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_medical_app/consts/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomButton extends StatelessWidget {
@@ -9,6 +10,7 @@ class CustomButton extends StatelessWidget {
   final VoidCallback onPress;
   final double height;
   final double width;
+  final double? borderRadius;
 
   const CustomButton({
     Key? key,
@@ -19,6 +21,7 @@ class CustomButton extends StatelessWidget {
     required this.onPress,
     required this.height,
     required this.width,
+    this.borderRadius = 13,
   }) : super(key: key);
 
   @override
@@ -29,19 +32,23 @@ class CustomButton extends StatelessWidget {
         height: height,
         width: width,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(13),
+          borderRadius: BorderRadius.circular(borderRadius!),
           color: buttonColor,
         ),
-        child: loading
-            ? CircularProgressIndicator(
-                color: Colors.deepPurple.shade200,
-              )
+        child: loading ? Center(
+          child: CircularProgressIndicator(
+                  color: AppColor.whiteColor,
+                ),
+        )
             : Center(
-                child: Text(title,
-                    style: GoogleFonts.nunito(
-                      color: textColor,
-                      fontSize: 16,
-                    ))),
+                child: Text(
+                  title,
+                  style: GoogleFonts.nunito(
+                    color: textColor,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
       ),
     );
   }

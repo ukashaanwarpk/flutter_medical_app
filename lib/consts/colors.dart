@@ -8,4 +8,5 @@ class AppColor {
   static Color whiteColor = Colors.white;
   static Color blueColor = Colors.blue;
   static Color black54 = Colors.black54;
+  static Color ratingColor = Colors.amber;
 }

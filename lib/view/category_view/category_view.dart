@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_medical_app/consts/colors.dart';
+import 'package:flutter_medical_app/view/category_view/category_details_view.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../consts/list.dart';
@@ -43,7 +45,9 @@ class _CategoryViewState extends State<CategoryView> {
             itemCount: iconList.length,
             itemBuilder: (context, index) {
               return GestureDetector(
-                onTap: (){},
+                onTap: (){
+                  Get.to(()=> CategoryDetailsView(catName: iconTitleList[index],));
+                },
                 child: Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(

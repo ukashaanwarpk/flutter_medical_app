@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_medical_app/consts/colors.dart';
+import 'package:flutter_medical_app/view/book_appointment/appointment_view.dart';
 import 'package:flutter_medical_app/view/category_view/category_view.dart';
 import 'package:flutter_medical_app/view/login_view/login_view.dart';
 import 'package:flutter_medical_app/view/setting_view/setting_view.dart';
@@ -18,8 +19,8 @@ int selectedIndex = 0;
 
 List screenList = [
   const HomeView(),
+  const AppointmentView(),
   const CategoryView(),
-  const LoginView(),
   const SettingView(),
 ];
 
@@ -48,14 +49,12 @@ class _HomeState extends State<Home> {
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.category),
-            label: "Category",
+            icon: Icon(Icons.calendar_today),
+            label: "Appointment",
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-            ),
-            label: "Doctor",
+            icon: Icon(Icons.category),
+            label: "Category",
           ),
           BottomNavigationBarItem(icon: Icon(Icons.settings),
             label: "Settings",
